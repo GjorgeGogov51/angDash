@@ -9,7 +9,7 @@
     backdrop-filter: blur(3px);
     margin:12px;
     margin-top:50px;
-    
+
 }
 /*
 .tab{
@@ -20,6 +20,7 @@
 */
 .tab{
     position:relative;
+    text-decoration: none;
 }
 .tab-tile{
     display:flex;
@@ -33,6 +34,8 @@
         color: #222;
     }    
 }
+
+// Styles for the tab tile background 'Shape'
 
 .tab-tile::before{
     content: '';
@@ -69,3 +72,12 @@
     transform: scale(1.1);
     opacity: 1;
 }
+
+
+.tab.selected .tab-tile::before{
+    border-radius: 100%;
+    background-color: white;
+}
+
+// End of tab tile background 'Shape' styles
+

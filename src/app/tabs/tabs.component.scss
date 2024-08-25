@@ -1,0 +1,71 @@
+.tabs{
+    display: flex;
+    padding: 10px;
+    background-color: rgba(white, 0.25);
+
+    border-radius: 12px;
+    gap: 14px;
+
+    backdrop-filter: blur(3px);
+    margin:12px;
+    margin-top:50px;
+    
+}
+/*
+.tab{
+    &:not(:last-child){
+        margin-right:14px;
+    } 
+}
+*/
+.tab{
+    position:relative;
+}
+.tab-tile{
+    display:flex;
+    padding:18px;
+    //background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+    //border-radius: 10px;
+
+    cursor: pointer;
+
+    i{
+        color: #222;
+    }    
+}
+
+.tab-tile::before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    
+    height:100%;
+    width:100%;
+    
+    border-radius: 10px;
+    z-index: -1;
+
+    transition: all 0.2s;
+    opacity: 0.9;
+}
+
+.bookmarks-tab .tab-tile::before{
+    background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+}
+
+.todos-tab .tab-tile::before{
+    background: linear-gradient(45deg, #a2ffff, #ffbdde);
+}
+
+.notes-tab .tab-tile::before{
+    background: linear-gradient(45deg, #d2cdff, #5fffbc);    
+}
+/*Can't style pseudo element
+.tab-tile::before:hover{
+    transform: scale(1.2);
+}*/
+.tab-tile:hover::before{
+    transform: scale(1.1);
+    opacity: 1;
+}

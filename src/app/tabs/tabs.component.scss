@@ -25,11 +25,11 @@
 .tab-tile{
     display:flex;
     padding:18px;
-    //background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
-    //border-radius: 10px;
 
     cursor: pointer;
-    transition: all 0.2s;
+    
+    transition: all 0.2s ease-out;
+
 
     i{
         color: #222;
@@ -37,7 +37,8 @@
 }
 
 .tab.selected .tab-tile{
-    transform:  translateY(-28px);
+    //transform:  translateY(-28px);
+    transform: translateY(-50%);
     transition-duration: 0.4s;
     transition-timing-function: cubic-bezier(0, 0, 0, 2);
 }
@@ -90,7 +91,21 @@
 
     box-shadow: 0px 7px 17px rgba(black, 0.12);
 }
-
-
 // End of tab tile background 'Shape' styles
 
+
+
+// Styles for the Underline effect
+
+.tab::before{
+    content: '';
+    position: absolute;
+    
+    height:10px;
+    width:100%;
+
+    background-color: white;
+
+    //Same as .tabs padding
+    bottom:-10px;
+}

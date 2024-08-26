@@ -38,6 +38,8 @@
 
 .tab.selected .tab-tile{
     transform:  translateY(-28px);
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0, 0, 0, 2);
 }
 
 // Styles for the tab tile background 'Shape'

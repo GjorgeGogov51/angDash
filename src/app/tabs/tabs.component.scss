@@ -29,10 +29,15 @@
     //border-radius: 10px;
 
     cursor: pointer;
+    transition: all 0.2s;
 
     i{
         color: #222;
     }    
+}
+
+.tab.selected .tab-tile{
+    transform:  translateY(-28px);
 }
 
 // Styles for the tab tile background 'Shape'
@@ -75,9 +80,12 @@
 
 
 .tab.selected .tab-tile::before{
-    border-radius: 100%;
-    background-color: white;
+    border-radius: 50%;
+
+    transform: scale(1.1);
+    opacity: 1;
 }
+
 
 // End of tab tile background 'Shape' styles
 

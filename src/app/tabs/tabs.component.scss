@@ -97,15 +97,35 @@
 
 // Styles for the Underline effect
 
-.tab::before{
+// same as before
+.tab::after{
     content: '';
     position: absolute;
     
-    height:10px;
-    width:100%;
+    height:3px;
+    width:50%;
+    
+    margin:auto;
+    left:0;
+    right:0;
 
-    background-color: white;
+    background-color: rgba(white,0.85);
+    //opacity: 0.85;
 
     //Same as .tabs padding
     bottom:-10px;
+
+    //hide by default
+    opacity: 0;
+
+
+    transition: all 0.2s;
+    transform: scaleX(0);
+}
+
+.tab.selected::after{
+    opacity: 1;
+    transform: scaleX(1);
+    //delay - as as soon as overshoot ends, underline gets added
+    transition-delay: 0.4s
 }

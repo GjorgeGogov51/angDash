@@ -90,6 +90,8 @@
     opacity: 1;
 
     box-shadow: 0px 7px 17px rgba(black, 0.12);
+
+    transition-delay: 0.2s;
 }
 // End of tab tile background 'Shape' styles
 
@@ -128,4 +130,8 @@
     transform: scaleX(1);
     //delay - as as soon as overshoot ends, underline gets added
     transition-delay: 0.4s
+}
+
+.tab.selected{
+    outline: none;
 }

@@ -35,6 +35,9 @@
 {
     //background-color: cadetblue;
     flex-grow: 1;
+    
+    //Solves the scroll overflow issue
+    min-height:0;
 }
 
 .bottom-section

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TabsComponent } from './tabs/tabs.component';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, query, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,15 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   animations:[
     trigger('routeAnim',[
       transition('* => *',[
+        query(':enter',[
+          style({
+            backgroundColor: 'wheat',
+            //if the element is displayed inline, the animation won't trigger
+            display: 'block',
+          })
+          , animate(1000)
+        ], {optional:true }),
+
         style({
           backgroundColor: 'blue'
         }),

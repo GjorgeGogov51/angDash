@@ -12,19 +12,24 @@ import { animate, query, state, style, transition, trigger } from '@angular/anim
   animations:[
     trigger('routeAnim',[
       transition('* => *',[
+        //fix later
+        /*query(':leave',[
+          animate(1000,
+            style({
+              opacity: '0'
+            }))
+        ],{optional:true}),*/
+
         query(':enter',[
           style({
-            backgroundColor: 'wheat',
-            //if the element is displayed inline, the animation won't trigger
-            display: 'block',
-          })
-          , animate(1000)
-        ], {optional:true }),
-
-        style({
-          backgroundColor: 'blue'
-        }),
-        animate(1000)
+            opacity: '0'
+          }),
+          animate(1000,
+            style({
+              opacity: '1'
+            }))
+        ],{optional:true}),
+        
       ])
     ])
   ]

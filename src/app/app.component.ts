@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TabsComponent } from './tabs/tabs.component';
-import { animate, query, state, style, transition, trigger } from '@angular/animations';
+import { animate, group, query, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,8 @@ import { animate, query, state, style, transition, trigger } from '@angular/anim
       transition('* => *',[
         //Parent element (can alos be in SCSS file)
         style({
-          position: 'relative'
+          position: 'relative',
+          overflow: 'hidden'
         }),
 
         query(':enter, :leave',[
@@ -23,31 +24,39 @@ import { animate, query, state, style, transition, trigger } from '@angular/anim
             top:0,
             left:0,
             width:'100%',
-            overflowY: 'auto',
             height:'100%'
           })
         ], {optional: true}),
 
-        query(':enter',[
+        /*query(':enter',[
           style({
             opacity:'0'
           })
-        ], { optional:true}),
-
-        query(':leave',[
-          animate(1000,
-            style({
-              opacity: '0'
-            }))
-        ],{optional:true}),
-
-        query(':enter',[
-          animate(1000,
-            style({
-              opacity: '1'
-            }))
-        ],{optional:true}),
+        ], { optional:true}),*/
         
+        //at the same time
+        group([
+          query(':leave',[
+            animate(1000,
+              style({
+                opacity: '0',
+                transform: 'translateX(-80px)',
+              }))
+          ],{optional:true}),
+  
+          query(':enter',[
+            style({
+              transform: 'translateX(80px)',
+              opacity:'0'
+            }),
+            animate(1000,
+              style({
+                opacity: '1',
+                transform: 'translateX(0px)'
+              }))
+          ],{optional:true}),
+        ]),
+
       ])
     ])
   ]

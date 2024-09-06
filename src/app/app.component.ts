@@ -12,7 +12,7 @@ import { animate, group, query, state, style, transition, trigger } from '@angul
   animations:[
     trigger('routeAnim',[
       transition('* => *',[
-        //Parent element (can alos be in SCSS file)
+        //Parent element (can also be in SCSS file)
         style({
           position: 'relative',
           overflow: 'hidden'
@@ -37,7 +37,7 @@ import { animate, group, query, state, style, transition, trigger } from '@angul
         //at the same time
         group([
           query(':leave',[
-            animate(1000,
+            animate('200ms ease-in',
               style({
                 opacity: '0',
                 transform: 'translateX(-80px)',
@@ -49,7 +49,7 @@ import { animate, group, query, state, style, transition, trigger } from '@angul
               transform: 'translateX(80px)',
               opacity:'0'
             }),
-            animate(1000,
+            animate(200,
               style({
                 opacity: '1',
                 transform: 'translateX(0px)'

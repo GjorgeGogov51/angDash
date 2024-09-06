@@ -1,0 +1,5 @@
+Google Fonts - Material Icons
+Pixabay images
+UI Gradients - https://uigradients.com
+Width/Height 100% so that a section doesn't just span the content within
+Position - Parent:Relative - Child:Absolute

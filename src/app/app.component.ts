@@ -12,18 +12,36 @@ import { animate, query, state, style, transition, trigger } from '@angular/anim
   animations:[
     trigger('routeAnim',[
       transition('* => *',[
-        //fix later
-        /*query(':leave',[
+        //Parent element (can alos be in SCSS file)
+        style({
+          position: 'relative'
+        }),
+
+        query(':enter, :leave',[
+          style({
+            position:'absolute',
+            top:0,
+            left:0,
+            width:'100%',
+            overflowY: 'auto',
+            height:'100%'
+          })
+        ], {optional: true}),
+
+        query(':enter',[
+          style({
+            opacity:'0'
+          })
+        ], { optional:true}),
+
+        query(':leave',[
           animate(1000,
             style({
               opacity: '0'
             }))
-        ],{optional:true}),*/
+        ],{optional:true}),
 
         query(':enter',[
-          style({
-            opacity: '0'
-          }),
           animate(1000,
             style({
               opacity: '1'

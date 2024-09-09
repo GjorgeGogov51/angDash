@@ -1,4 +1,7 @@
-Google Fonts - Material Icons
+MiniReset when starting - https://jgthms.com/minireset.css/
+Google Fonts - @font-face import vo css
+Fancy UI - https://uiverse.io
+Material Icons
 Pixabay images
 UI Gradients - https://uigradients.com
 Width/Height 100% so that a section doesn't just span the content within
